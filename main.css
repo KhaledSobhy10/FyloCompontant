@@ -1,0 +1,178 @@
+body{
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    --paleBlue: hsl(243, 100%, 93%);
+    --grayishBlue: hsl(229, 7%, 55%);
+    --darkBlue:hsl(228, 56%, 26%);
+    --veryDarkBlue:hsl(229, 57%, 11%);
+}
+
+.contanier{
+    width: 100%;
+    background-color: hsl(229, 57%, 11%);
+    background-image: url(images/bg-desktop.png);
+    background-position:center bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100vh;
+    position: relative;
+    color: white;
+    display: flex;
+    align-items: center;
+   
+} 
+.contanier .attribution{
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 200px;
+}
+
+.content .main-box{
+    border-radius: 10px;
+    border-top-right-radius: 60px;
+    height: fit-content;
+    padding:20px;
+    background-color: var(--darkBlue);
+    flex-basis: 20%;
+    min-width: 200px;
+}
+
+.icons{
+    padding-top: 30px;
+    display: flex;
+    gap: 10px;
+}
+
+.icons .icon-box{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       width: 50px;
+       height: 50px;
+       border-radius: 10px;
+       background-color: var(--veryDarkBlue);
+}
+
+.content .usage-box{
+    max-width:calc(100% - 60px);
+    flex-basis:calc(40% - 60px);
+    min-width: 280px;
+    background-color: var(--darkBlue);
+    padding: 30px;
+    border-radius: 10px;
+    height: fit-content;
+    align-self: flex-end;    
+    position: relative;
+    padding-bottom: 40px;
+}
+
+ .usage-progress{
+    width: 100%;
+    height: 16px;
+    background-color: var(--veryDarkBlue);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+
+.usage-progress::before, 
+.usage-progress::after{
+    position: absolute;
+    bottom: -20px;
+    font-size: 13px;
+}
+
+.usage-progress::before{
+    content: "0 GB";
+    left: 0;
+} 
+
+.usage-progress::after{
+    content: "1000 GB";
+    right: 0;
+
+}   
+
+ .usage-value{
+    background-image:linear-gradient(to right , hsl(6, 100%, 80%) , hsl(335, 100%, 65%));   
+    height: calc(100%  - 2px);
+    border-radius: 10px;
+    position: relative;
+}
+
+.usage-value::after{
+  content: "";
+  background-color: white;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  right: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.left-value {
+    background-color: white;
+    width: fit-content;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    position: absolute;
+    top: -20px;
+    right: 30px;
+}
+
+.left-value > span {
+    color: #777;
+    font-weight: normal;
+    font-size: 10px;
+    top: -10px;
+}
+
+.left-value::after {
+    content: "";
+    border-bottom: 10px solid transparent;
+    border-top: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 10px solid white;
+    position: relative;
+    right: -10px;
+    bottom: -10px;
+    
+}
+
+@media (max-width:600px) {
+    
+    .contanier{
+        background-size: cover;
+
+        } 
+}
+
+@media (max-width:375px) {
+    .left-value::after {
+        display: none;
+    }
+
+    .left-value {
+        left: 50%;
+        transform: translateX(-50%);
+        top: calc(100% - 20px);
+
+    }
+}
