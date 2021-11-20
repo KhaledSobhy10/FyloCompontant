@@ -175,4 +175,7 @@ body{
         top: calc(100% - 20px);
 
     }
+    .content{
+        margin-bottom: 50px;
+    }
 }
